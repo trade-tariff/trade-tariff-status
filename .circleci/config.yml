@@ -1,0 +1,49 @@
+version: 2.1
+
+orbs:
+  aws-cli: circleci/aws-cli@2.0.3
+
+filter-not-main: &filter-not-main
+  filters:
+    branches:
+      ignore:
+        - main
+
+filter-main: &filter-main
+  filters:
+    branches:
+      only:
+        - main
+
+jobs:
+  deploy:
+    docker:
+      - image: cimg/base:2023.05
+    steps:
+      - aws-cli/install
+      - checkout
+      - run:
+          command: make cp
+
+workflows:
+  version: 2
+  deploy-to-development:
+    jobs:
+      - deploy:
+          name: deploy-development
+          context: trade-tariff-status-development
+          <<: *filter-not-main
+
+  deploy-to-staging:
+    jobs:
+      - deploy:
+          name: deploy-staging
+          context: trade-tariff-status-staging
+          <<: *filter-main
+
+  deploy-to-production:
+    jobs:
+      - deploy:
+          name: deploy-production
+          context: trade-tariff-status-production
+          <<: *filter-main
