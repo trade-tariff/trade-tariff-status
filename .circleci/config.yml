@@ -31,19 +31,19 @@ workflows:
     jobs:
       - deploy:
           name: deploy-development
-          context: trade-tariff-status-checks-development
+          context: trade-tariff-status-development
           <<: *filter-not-main
 
   deploy-to-staging:
     jobs:
       - deploy:
           name: deploy-staging
-          context: trade-tariff-status-checks-staging
+          context: trade-tariff-status-staging
           <<: *filter-main
 
   deploy-to-production:
     jobs:
       - deploy:
           name: deploy-production
-          context: trade-tariff-status-checks-production
+          context: trade-tariff-status-production
           <<: *filter-main
