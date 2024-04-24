@@ -1,0 +1,41 @@
+{
+  "applications": [
+    {
+      "total_requests": 648,
+      "application": "Trade Tariff FPO Search",
+      "url": "https://search.dev.trade-tariff.service.gov.uk/fpo-code-search",
+      "p90": 0.079509613,
+      "error_count": 0,
+      "success_count": 648,
+      "status": "ACTIVE"
+    },
+    {
+      "total_requests": 4589,
+      "application": "Trade Tariff Backend",
+      "url": "https://dev.trade-tariff.service.gov.uk/api/v2/commodities/0101210000",
+      "p90": 0.006167325,
+      "error_count": 4589,
+      "success_count": 0,
+      "status": "INACTIVE"
+    },
+    {
+      "total_requests": 2493,
+      "application": "Trade Tariff Frontend",
+      "url": "https://dev.trade-tariff.service.gov.uk/commodities/0101210000",
+      "p90": 0.00704488,
+      "error_count": 2493,
+      "success_count": 0,
+      "status": "INACTIVE"
+    },
+    {
+      "total_requests": 2948,
+      "application": "Trade Tariff Duty Calculator",
+      "url": "https://dev.trade-tariff.service.gov.uk/duty-calculator/uk/0101210000/import-date",
+      "p90": 0.006778594,
+      "error_count": 2948,
+      "success_count": 0,
+      "status": "INACTIVE"
+    }
+  ],
+  "last_updated": "2024-04-23T15:30:40.396474544Z"
+}
