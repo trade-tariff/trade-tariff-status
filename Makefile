@@ -11,7 +11,7 @@ run:
 		-f
 
 cp:
-	aws s3 cp . s3://$STATUS_CHECKS_BUCKET/ \
+	aws s3 cp . s3://${STATUS_CHECKS_BUCKET}/ \
 		--recursive \
 		--exclude "status.json" \
 		--exclude "Makefile" \
